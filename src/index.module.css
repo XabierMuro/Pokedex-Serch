@@ -8,42 +8,54 @@
   -moz-osx-font-smoothing: grayscale;
 
   --color-type-grass: #a2ce69;
-  --color-type-bug: #C6D282;
-  --color-type-electric: #EBD56C;
-  --color-type-ground: #D3AE6B;
-  --color-type-fire: ##D36255;
-  --color-type-fighting: #B44D54;
-  --color-type-poison: #9756DC;
-  --color-type-psychic: ##DB6AB5;
-  --color-type-fairy: #E8A9D3;
-  --color-type-dragon: #B7B6DB;
-  --color-type-flying: #A2BFEB;
-  --color-type-ghost: #655A7D;
-  --color-type-water: #3CAFE8;
-  --color-type-ice: #C6FBF9;
-  --color-type-normal: #D1D2C0;
-  --color-type-rock: #A49D9A;
-  --color-type-steel: #78817E;
-  --color-type-dark: #3D413F;
+  --color-type-bug: #c6d282;
+  --color-type-electric: #ebd56c;
+  --color-type-ground: #d3ae6b;
+  --color-type-fire: ##d36255;
+  --color-type-fighting: #b44d54;
+  --color-type-poison: #9756dc;
+  --color-type-psychic: ##db6ab5;
+  --color-type-fairy: #e8a9d3;
+  --color-type-dragon: #b7b6db;
+  --color-type-flying: #a2bfeb;
+  --color-type-ghost: #655a7d;
+  --color-type-water: #3cafe8;
+  --color-type-ice: #c6fbf9;
+  --color-type-normal: #d1d2c0;
+  --color-type-rock: #a49d9a;
+  --color-type-steel: #78817e;
+  --color-type-dark: #3d413f;
 
-  --space-3xs:0.125rem;
-  --space-2xs:0.25rem;
-  --space-xs:0.5rem;
-  --space-s:0.75rem;
-  --space-m:1rem;
-  --space-l:1.25rem;
-  --space-xl:1.5rem;
-  --space-2xl:2rem;
-  --space-3xl:2.5rem;
-  --space-4xl:4rem;
+  --color-brand-0: #ffffff;
+  --color-brand-1: #f5f4f5;
+  --color-brand-2: #eaeaeb;
+  --color-brand-3: #d6d4d6;
+  --color-brand-4: #c1bfc2;
+  --color-brand-5: #ada9ad;
+  --color-brand-6: #989499;
+  --color-brand-7: #5c5a5d;
+  --color-brand-8: #3f3d3f;
+  --color-brand-9: #212021;
+  --color-brand-10: #030303;
 
-  --radius-2xs:0.25rem;
-  --radius-xs:0.5rem;
-  --radius-s:0.75rem;
-  --radius-m:1rem;
-  --radius-l:1.25rem;
-  --radius-xl:1.5rem;
-  --radius-2xl:2rem;
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1rem;
+  --space-l: 1.25rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 2.5rem;
+  --space-4xl: 4rem;
+
+  --radius-2xs: 0.25rem;
+  --radius-xs: 0.5rem;
+  --radius-s: 0.75rem;
+  --radius-m: 1rem;
+  --radius-l: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
 }
 
 .card_header {
