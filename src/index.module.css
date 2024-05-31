@@ -56,6 +56,20 @@
   --radius-l: 1.25rem;
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
+
+  --font-size-desktop-caption: 0.75rem;
+  --font-size-desktop-body: 0.875rem;
+  --font-size-desktop-link: 1rem;
+  --font-size-desktop-subhedline: 1.125rem;
+  --font-size-desktop-hedline: 1.5rem;
+  --font-size-desktop-display1: 1.75rem;
+
+  --font-size-mobile-caption: 0.75rem;
+  --font-size-mobile-body: 0.875rem;
+  --font-size-mobile-link: 0.875rem;
+  --font-size-mobile-subhedline: 1rem;
+  --font-size-mobile-hedline: 1.25rem;
+  --font-size-mobile-display1: 1.5rem;
 }
 
 .card_header {
