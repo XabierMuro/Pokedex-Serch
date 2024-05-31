@@ -13,11 +13,17 @@
   --color-type-fire: ##D36255;
   --color-type-fighting: #B44D54;
   --color-type-poison: #9756DC;
-  --color-type-grasss: #a2ce69;
-  --color-type-grasss: #a2ce69;
-  --color-type-grasss: #a2ce69;
-  --color-type-grasss: #a2ce69;
-  --color-type-grasss: #a2ce69;
+  --color-type-psychic: ##DB6AB5;
+  --color-type-fairy: #E8A9D3;
+  --color-type-dragon: #B7B6DB;
+  --color-type-flying: #A2BFEB;
+  --color-type-ghost: #655A7D;
+  --color-type-water: #3CAFE8;
+  --color-type-ice: #C6FBF9;
+  --color-type-normal: #D1D2C0;
+  --color-type-rock: #A49D9A;
+  --color-type-steel: #78817E;
+  --color-type-dark: #3D413F;
 }
 
 .card_header {
