@@ -42,7 +42,8 @@
   --radius-s:0.75rem;
   --radius-m:1rem;
   --radius-l:1.25rem;
-  --radius-xl:1.25rem;
+  --radius-xl:1.5rem;
+  --radius-2xl:2rem;
 }
 
 .card_header {
