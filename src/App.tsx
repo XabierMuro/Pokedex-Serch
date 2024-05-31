@@ -8,9 +8,9 @@ function App() {
         <h3>#001</h3>
       </header>
       <body className={styles.pokemon_stats_container}>
-        <article className="pokemon_types">
-          <div className="pokemon_type_grass"></div>
-          <div className="pokemon_type_poison"></div>
+        <article className={styles.pokemon_types}>
+          <div className={styles.pokemon_type_grass}>Grass</div>
+          <div className={styles.pokemon_type_poison}>Poison</div>
         </article>
       </body>
     </main>

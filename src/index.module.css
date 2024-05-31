@@ -6,6 +6,18 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --color-type-grass: #a2ce69;
+  --color-type-bug: #C6D282;
+  --color-type-electric: #EBD56C;
+  --color-type-ground: #D3AE6B;
+  --color-type-fire: ##D36255;
+  --color-type-fighting: #B44D54;
+  --color-type-poison: #9756DC;
+  --color-type-grasss: #a2ce69;
+  --color-type-grasss: #a2ce69;
+  --color-type-grasss: #a2ce69;
+  --color-type-grasss: #a2ce69;
+  --color-type-grasss: #a2ce69;
 }
 
 .card_header {
@@ -31,7 +43,18 @@
   justify-content: center;
 }
 
-.pokemon_type_grass{
+.pokemon_type_grass {
   width: auto;
-  height: 5rem;
+  height: 2rem;
+  border-radius: 100px;
+  background-color: #a2ce69;
+  color: white;
+}
+.pokemon_type_poison {
+  width: auto;
+  height: 2rem;
+  padding: 0.2rem, 0.2rem, 0.2rem, 0.2rem;
+  border-radius: 100px;
+  background-color: #9756dc;
+  color: white;
 }
