@@ -6,6 +6,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   --color-type-grass: #a2ce69;
   --color-type-bug: #C6D282;
   --color-type-electric: #EBD56C;
@@ -24,6 +25,24 @@
   --color-type-rock: #A49D9A;
   --color-type-steel: #78817E;
   --color-type-dark: #3D413F;
+
+  --space-3xs:0.125rem;
+  --space-2xs:0.25rem;
+  --space-xs:0.5rem;
+  --space-s:0.75rem;
+  --space-m:1rem;
+  --space-l:1.25rem;
+  --space-xl:1.5rem;
+  --space-2xl:2rem;
+  --space-3xl:2.5rem;
+  --space-4xl:4rem;
+
+  --radius-2xs:0.25rem;
+  --radius-xs:0.5rem;
+  --radius-s:0.75rem;
+  --radius-m:1rem;
+  --radius-l:1.25rem;
+  --radius-xl:1.25rem;
 }
 
 .card_header {
