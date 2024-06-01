@@ -72,8 +72,21 @@
   --font-size-mobile-display1: 1.5rem;
 }
 
-h3 {
+
+
+* {
+  font-family: 'Kanit';
+}
+
+.card_name{
   margin: 0;
+  font-weight: 600;
+}
+
+.card_number{
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-brand-2)
 }
 
 .card_header {
@@ -131,7 +144,6 @@ h3 {
 .pokemon_measures {
   display: flex;
   justify-content: center;
-  font-weight: bold;
 }
 
 .pokemon_weight {
@@ -166,11 +178,10 @@ h3 {
   color: var(--color-brand-4);
   list-style: none;
 }
-.pokemon_stat_number{
+.pokemon_stat_number {
   margin-left: var(--space-s);
   color: var(--color-brand-10);
-  font-weight: bold;
 }
-.pokemon_progress_bar{
+.pokemon_progress_bar {
   accent-color: var(--color-brand-10);
 }
