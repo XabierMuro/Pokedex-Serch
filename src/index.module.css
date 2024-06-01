@@ -72,7 +72,7 @@
   --font-size-mobile-display1: 1.5rem;
 }
 
-h3{
+h3 {
   margin: 0;
 }
 
@@ -100,6 +100,7 @@ h3{
   width: auto;
   height: auto;
   justify-content: flex-end;
+  padding: var(--space-s);
 }
 .pokemon_types {
   display: flex;
@@ -155,4 +156,21 @@ h3{
   align-self: center;
   position: absolute;
   top: 3rem;
+}
+
+.pokemon_stats_list {
+  padding: 0;
+}
+
+.pokemon_stats {
+  color: var(--color-brand-4);
+  list-style: none;
+}
+.pokemon_stat_number{
+  margin-left: var(--space-s);
+  color: var(--color-brand-10);
+  font-weight: bold;
+}
+.pokemon_progress_bar{
+  accent-color: var(--color-brand-10);
 }
