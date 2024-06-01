@@ -89,6 +89,8 @@
   display: flex;
   justify-content: space-between;
   color: var(--color-brand-0);
+  margin-left: var(--space-xs);
+  margin-right: var(--space-xs);
 }
 
 .pokemon_card {
@@ -153,6 +155,7 @@
   margin: var(--space-xs);
   display: flex;
   align-items: center;
+  gap: var(--space-2xs);
 }
 
 .pokemon_length {
@@ -164,6 +167,7 @@
   display: flex;
   align-items: center;
   border-left: var(--color-brand-2) solid 1px;
+  gap: var(--space-2xs);
 }
 
 .pokemon_img {
@@ -180,17 +184,23 @@
 }
 
 .pokemon_stats {
-
+  display: flex;
+  justify-content: flex-start;
   color: var(--color-brand-4);
   font-size: var(--space-s);
   list-style: none;
+  align-items: center;
+  
 }
 
 .pokemon_stat_number {
   color: var(--color-brand-10);
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+
 }
 
 .pokemon_progress_bar {
-  width: 13.6rem;
+  width: 12.8rem;
   accent-color: var(--color-brand-10);
 }
