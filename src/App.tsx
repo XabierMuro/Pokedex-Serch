@@ -7,7 +7,14 @@ function App() {
         <h3>Bulbasur</h3>
         <h3>#001</h3>
       </header>
-      <body className={styles.pokemon_stats_container}>
+      
+
+      <section className={styles.pokemon_stats_container}>
+      <img
+        className={styles.pokemon_img}
+        src="../public/pokemon3.png"
+        alt="pokemon image"
+      />
         {/* TODO nose si esto son articles */}
         <article className={styles.pokemon_types}>
           <div className={styles.pokemon_type_grass}>Grass</div>
@@ -27,7 +34,7 @@ function App() {
             <li>SPD</li>
           </ul>
         </article>
-      </body>
+      </section>
     </main>
   )
 }
