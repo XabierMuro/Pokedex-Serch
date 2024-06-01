@@ -108,7 +108,7 @@
   background-color: var(--color-brand-0);
   border-radius: var(--radius-xl);
   width: auto;
-  height: auto;
+  height: 15.63rem;
   justify-content: flex-end;
   padding: var(--space-s);
 }
@@ -158,11 +158,12 @@
 .pokemon_length {
   width: auto;
   margin: var(--space-xs);
+  padding: var(--space-xs);
   padding-left: var(--space-s);
   padding-right: var(--space-s);
   display: flex;
   align-items: center;
-  border-left: var(--color-brand-4) solid 1px;
+  border-left: var(--color-brand-2) solid 1px;
 }
 
 .pokemon_img {
@@ -170,7 +171,7 @@
   height: 8.75rem;
   align-self: center;
   position: absolute;
-  top: 3rem;
+  top: 4.5rem;
 }
 
 .pokemon_stats_list {
@@ -190,5 +191,6 @@
 }
 
 .pokemon_progress_bar {
+  width: 13.6rem;
   accent-color: var(--color-brand-10);
 }

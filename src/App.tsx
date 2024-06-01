@@ -9,12 +9,11 @@ function App() {
       </header>
 
       <section className="pokemon_stats_container">
-        {/* <img
+        <img
           className={"pokemon_img"}
-          src="../public/pokemon3.png"
+          src="../public/bulbasaur.png"
           alt="pokemon image"
-        /> */}
-        {/* TODO nose si esto son articles */}
+        />
         <article className={"pokemon_types"}>
           <div className={"pokemon_type_grass"}>
             <svg
