@@ -72,21 +72,17 @@
   --font-size-mobile-display1: 1.5rem;
 }
 
-
-
 * {
   font-family: 'Kanit';
 }
 
-.card_name{
+.card_name {
   margin: 0;
-  font-weight: 600;
 }
 
-.card_number{
+.card_number {
   margin: 0;
-  font-weight: 600;
-  color: var(--color-brand-2)
+  color: var(--color-brand-2);
 }
 
 .card_header {
@@ -94,6 +90,7 @@
   justify-content: space-between;
   color: var(--color-brand-0);
 }
+
 .pokemon_card {
   display: flex;
   flex-direction: column;
@@ -118,48 +115,54 @@
 .pokemon_types {
   display: flex;
   justify-content: center;
+  font-size: var(--space-s);
 }
 
 .pokemon_type_grass {
   width: auto;
-  height: var(--space-2xl);
+  height: var(--space-xl);
   padding-left: var(--space-s);
   padding-right: var(--space-s);
   border-radius: var(--radius-2xl);
   background-color: var(--color-type-grass);
   color: var(--color-brand-0);
-  align-items: baseline;
+  display: flex;
+  align-items: center;
+  margin-right: var(--space-xs);
 }
 .pokemon_type_poison {
   width: auto;
-  height: var(--space-2xl);
+  height: var(--space-xl);
   padding-left: var(--space-s);
   padding-right: var(--space-s);
   border-radius: var(--radius-2xl);
   background-color: var(--color-type-poison);
   color: var(--color-brand-0);
-  align-items: baseline;
+  display: flex;
+  align-items: center;
 }
 
 .pokemon_measures {
   display: flex;
   justify-content: center;
+  font-size: var(--space-s);
 }
 
 .pokemon_weight {
   width: auto;
-  height: var(--space-2xl);
-  padding-left: var(--space-s);
-  padding-right: var(--space-s);
-  border-radius: var(--radius-2xl);
+  margin: var(--space-xs);
+  display: flex;
+  align-items: center;
 }
 
 .pokemon_length {
   width: auto;
-  height: var(--space-2xl);
+  margin: var(--space-xs);
   padding-left: var(--space-s);
   padding-right: var(--space-s);
-  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  border-left: var(--color-brand-4) solid 1px;
 }
 
 .pokemon_img {
@@ -172,16 +175,20 @@
 
 .pokemon_stats_list {
   padding: 0;
+  margin: 0;
 }
 
 .pokemon_stats {
+
   color: var(--color-brand-4);
+  font-size: var(--space-s);
   list-style: none;
 }
+
 .pokemon_stat_number {
-  margin-left: var(--space-s);
   color: var(--color-brand-10);
 }
+
 .pokemon_progress_bar {
   accent-color: var(--color-brand-10);
 }
