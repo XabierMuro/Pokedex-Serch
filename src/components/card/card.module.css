@@ -97,8 +97,8 @@
   width: 8.75rem;
   height: 8.75rem;
   align-self: center;
-  position: absolute;
-  top: 4.5rem;
+  position: relative;
+  top: -1rem;
 }
 
 .pokemon_stats_list {
