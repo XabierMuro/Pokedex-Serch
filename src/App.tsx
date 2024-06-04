@@ -2,6 +2,7 @@ import './index.css'
 import Card from './components/card/card'
 import Header from './components/header/header'
 import SearchBar from './components/searchBar/searchBar'
+import Footer from './components/footer/footer'
 function App() {
   return (
     <>
@@ -11,6 +12,7 @@ function App() {
         <SearchBar></SearchBar>
         <Card></Card>
       </div>
+      <Footer></Footer>
     </>
   )
 }

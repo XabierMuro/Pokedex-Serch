@@ -1,7 +1,8 @@
 .search_container{
     display: flex;
     margin: 0 auto;
-
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-3xl);
 }
 
 .search_input{
@@ -12,7 +13,7 @@
     border-bottom: solid 1px var( --color-brand-3);
     border-top: solid 1px var( --color-brand-3);
     background-color: var(--color-brand-1);
-    width: 22rem;
+    width: 37.5rem;
     height: 2rem;
 }
 
