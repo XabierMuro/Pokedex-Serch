@@ -7,6 +7,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --shadow-s: 0px 2px 3px -1px #7d3bec12, 0px 5px 10px -2px #7d3bec26;
+  --shadow-m: 0px 4px 6px -2px #7d3bec0d, 0px 10px 15px -3px #7d3bec1a;
+  --shadow-l: 0px 6px 8px -3px #7d3bec0d, 0px 15px 20px -5px #7d3bec1a;
+
   --color-type-grass: #a2ce69;
   --color-type-bug: #c6d282;
   --color-type-electric: #ebd56c;
@@ -190,14 +194,12 @@
   font-size: var(--space-s);
   list-style: none;
   align-items: center;
-  
 }
 
 .pokemon_stat_number {
   color: var(--color-brand-10);
   padding-left: var(--space-xs);
   padding-right: var(--space-xs);
-
 }
 
 .pokemon_progress_bar {

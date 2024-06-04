@@ -158,7 +158,7 @@ function Card() {
           <ul className={styles.pokemon_stats_list}>
             <li className={styles.pokemon_stats}>
               HP<span className={styles.pokemon_stat_number}>045</span>
-              <progress className={styles.pokemon_progress_bar} value={0.6} />
+              <progress className={styles.pokemon_progress_bar} value={0.3} />
             </li>
             <li className={styles.pokemon_stats}>
               ATK<span className={styles.pokemon_stat_number}>045</span>
@@ -170,15 +170,15 @@ function Card() {
             </li>
             <li className={styles.pokemon_stats}>
               SAT<span className={styles.pokemon_stat_number}>045</span>
-              <progress className={styles.pokemon_progress_bar} value={0.9} />
+              <progress className={styles.pokemon_progress_bar} value={0.3} />
             </li>
             <li className={styles.pokemon_stats}>
               SDF<span className={styles.pokemon_stat_number}>045</span>
-              <progress className={styles.pokemon_progress_bar} value={0.5} />
+              <progress className={styles.pokemon_progress_bar} value={0.3} />
             </li>
             <li className={styles.pokemon_stats}>
               SPD<span className={styles.pokemon_stat_number}>045</span>
-              <progress className={styles.pokemon_progress_bar} value={0.5} />
+              <progress className={styles.pokemon_progress_bar} value={0.3} />
             </li>
           </ul>
         </article>

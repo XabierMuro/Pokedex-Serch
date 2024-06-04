@@ -25,6 +25,7 @@
     padding: var(--space-xs);
     background-color: var(--color-type-grass);
     border-radius: var(--radius-xl);
+    box-shadow: var();
   }
   
   .pokemon_stats_container {
