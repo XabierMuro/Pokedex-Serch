@@ -1,8 +1,9 @@
 .search_container{
     display: flex;
     margin: 0 auto;
-    align-content: center;
+
 }
+
 .search_input{
     border-top-right-radius: var(--radius-xs);
     border-bottom-right-radius: var(--radius-xs);
@@ -14,9 +15,7 @@
     width: 22rem;
     height: 2rem;
 }
-.search_container:focus{
-    background-color: aqua;
-}
+
 .search_icon{
     border-top-left-radius: var(--radius-xs);
     border-bottom-left-radius: var(--radius-xs);
