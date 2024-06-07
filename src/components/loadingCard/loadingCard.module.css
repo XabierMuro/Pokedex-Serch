@@ -1,0 +1,12 @@
+.pokemon_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 16.81rem;
+  height: 24rem;
+  padding: var(--space-xs);
+  background-color: var(--color-brand-2);
+  border-radius: var(--radius-xl);
+  border: solid var(--color-brand-0) var(--space-xs);
+  box-shadow: var(--shadow-l);
+}
