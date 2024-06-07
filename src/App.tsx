@@ -7,12 +7,13 @@ function App() {
   return (
     <>
       <Header></Header>
-
       <div className="container">
         <SearchBar></SearchBar>
-        <Card></Card>
+        <div className="container_pokemon">
+          <Card></Card>
+        </div>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
     </>
   )
 }

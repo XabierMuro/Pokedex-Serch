@@ -83,6 +83,11 @@
 .container {
   display: flex;
   flex-direction: column;
+}
+
+.container_pokemon {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 57.5rem;
+  width: 57.5rem;
 }
