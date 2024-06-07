@@ -92,3 +92,8 @@
   margin: 0 auto;
   width: 57.5rem;
 }
+
+/* put input focus changes here */
+input:focus {
+  outline: none;
+}
