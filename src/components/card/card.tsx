@@ -4,7 +4,7 @@ import lengthIcon from '../../images/lengthIcon.svg'
 import poisonIcon from '../../images/poisonIcon.svg'
 import grassIcon from '../../images/grassIcon.svg'
 
-function Card() {
+export function Card() {
   return (
     <main className={styles.pokemon_card}>
       <header className={styles.card_header}>
@@ -70,5 +70,3 @@ function Card() {
     </main>
   )
 }
-
-export default Card

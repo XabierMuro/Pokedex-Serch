@@ -1,7 +1,7 @@
 import styles from './loadingCard.module.css'
 import bigPokeballIcon from '../../images/bigPokeballIcon.svg'
 
-function LoadingCard() {
+export function LoadingCard() {
   return (
     <main className={styles.pokemon_card}>
       <img
@@ -12,5 +12,3 @@ function LoadingCard() {
     </main>
   )
 }
-
-export default LoadingCard

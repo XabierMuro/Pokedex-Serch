@@ -1,7 +1,7 @@
 import styles from './header.module.css'
 import pokeballIcon from '../../images/pokeballIcon.svg'
 
-function Header() {
+export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header_container}>
@@ -16,4 +16,3 @@ function Header() {
     </header>
   )
 }
-export default Header

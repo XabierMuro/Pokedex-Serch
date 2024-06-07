@@ -1,7 +1,7 @@
 import styles from './searchBar.module.css'
 import SearchIcon from '../../images/searchIcon.svg'
 
-function SearchBar() {
+export function SearchBar() {
   return (
     <>
       <div className={styles.search_container}>
@@ -19,4 +19,3 @@ function SearchBar() {
     </>
   )
 }
-export default SearchBar
