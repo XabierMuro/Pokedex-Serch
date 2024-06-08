@@ -8,24 +8,23 @@ type PokemonData = {
   id: number
   weight: number
   height: number
-  sprites: string[]
+  sprites: string
   stats: number[]
   types: string[]
 }
+
 export function Card(props: PokemonData) {
   const { name, id, weight, height, sprites, stats, types } = props
+  const extraClassName = types[0]
+  console.log(extraClassName)
   return (
-    <main className={styles.pokemon_card}>
+    <main className={`${styles.pokemon_card} ${styles[extraClassName]}`}>
       <header className={styles.card_header}>
-        <h3 className={styles.card_name}>Bulbasaur</h3>
-        <h3 className={styles.card_number}>#001</h3>
+        <h3 className={styles.card_name}>{name}</h3>
+        <h3 className={styles.card_number}>#{id}</h3>
       </header>
       <section className={styles.pokemon_stats_container}>
-        <img
-          className={styles.pokemon_img}
-          src="../public/bulbasaur.png"
-          alt="pokemon image"
-        />
+        <img className={styles.pokemon_img} src={sprites} alt="pokemon image" />
         <article className={styles.pokemon_types}>
           <div className={styles.pokemon_type_grass}>
             <img src={grassIcon} alt="Grass Icon" />
@@ -40,11 +39,11 @@ export function Card(props: PokemonData) {
         <article className={styles.pokemon_measures}>
           <div className={styles.pokemon_weight}>
             <img src={weightIcon} alt="Weight Icon" />
-            6.9 kg
+            {weight} kg
           </div>
           <div className={styles.pokemon_length}>
             <img src={lengthIcon} alt="Length Icon" />
-            0.7 m
+            {height} m
           </div>
         </article>
         <article>
