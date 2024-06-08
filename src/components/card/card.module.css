@@ -16,6 +16,7 @@
 }
 
 .pokemon_card {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,6 +25,7 @@
   padding: var(--space-xs);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-l);
+  margin: var(--space-xs);
 }
 
 .pokemon_stats_container {

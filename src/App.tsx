@@ -82,8 +82,8 @@ function App() {
             .then(response => {
               const data = response.data
               console.log(data)
-              const types = data.types.map(type => type.type.name)
-              const stats = data.stats.map(stats => stats.base_stat)
+              const types = data.types.map((type: any) => type.type.name)
+              const stats = data.stats.map((stats: any) => stats.base_stat)
 
               return {
                 name: data.name,
