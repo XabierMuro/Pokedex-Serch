@@ -19,6 +19,7 @@ import normalIcon from '../../images/normalIcon.svg'
 import rockIcon from '../../images/rockIcon.svg'
 import steelIcon from '../../images/steelIcon.svg'
 import darkIcon from '../../images/darkIcon.svg'
+import smallPokeballIcon from '../../images/smallPokeballIcon.svg'
 type PokemonType =
   | 'grass'
   | 'bug'
@@ -70,6 +71,7 @@ const typeIcons: { [key in PokemonType]: string } = {
 export function Card(props: PokemonData) {
   const { name, id, weight, height, sprites, stats, types } = props
   const extraClassName = types[0]
+  const image = sprites != null ? sprites : smallPokeballIcon
   return (
     <main className={`${styles.pokemon_card} ${styles[extraClassName]}`}>
       <header className={styles.card_header}>
@@ -77,11 +79,7 @@ export function Card(props: PokemonData) {
         <h3 className={styles.card_number}>#{id}</h3>
       </header>
       <section className={styles.pokemon_stats_container}>
-        <img
-          className={styles.pokemon_img}
-          src={sprites}
-          alt={`${name} image`}
-        />
+        <img className={styles.pokemon_img} src={image} alt={`${name} image`} />
         <article className={styles.pokemon_types}>
           {types.map(type => (
             <div className={`${styles.pokemon_type} ${styles[type]}`}>
@@ -106,42 +104,42 @@ export function Card(props: PokemonData) {
               HP<span className={styles.pokemon_stat_number}>{stats[0]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[0] * 0.01}
+                value={(stats[0] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
               ATK<span className={styles.pokemon_stat_number}>{stats[1]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[1] * 0.01}
+                value={(stats[1] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
               DEF<span className={styles.pokemon_stat_number}>{stats[2]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[2] * 0.01}
+                value={(stats[2] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
               SAT<span className={styles.pokemon_stat_number}>{stats[3]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[3] * 0.01}
+                value={(stats[3] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
               SDF<span className={styles.pokemon_stat_number}>{stats[4]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[4] * 0.01}
+                value={(stats[4] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
               SPD<span className={styles.pokemon_stat_number}>{stats[5]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[5] * 0.01}
+                value={(stats[5] * 0.01) / 3}
               />
             </li>
           </ul>
