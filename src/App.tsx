@@ -38,6 +38,7 @@ function App() {
             const data = response.data
             console.log(data)
             const types = data.types.map(type => type.type.name)
+            const stats = data.stats.map(stats => stats.base_stat)
 
             return {
               name: data.name,
@@ -45,7 +46,7 @@ function App() {
               weight: data.weight,
               height: data.height,
               sprites: data.sprites.front_default,
-              stats: data.stats,
+              stats: stats,
               types: types,
             }
           })
@@ -82,6 +83,7 @@ function App() {
               const data = response.data
               console.log(data)
               const types = data.types.map(type => type.type.name)
+              const stats = data.stats.map(stats => stats.base_stat)
 
               return {
                 name: data.name,
@@ -89,7 +91,7 @@ function App() {
                 weight: data.weight,
                 height: data.height,
                 sprites: data.sprites.front_default,
-                stats: data.stats,
+                stats: stats,
                 types: types,
               }
             })

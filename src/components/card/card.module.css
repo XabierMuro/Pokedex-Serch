@@ -42,28 +42,16 @@
   font-size: var(--space-s);
 }
 
-.pokemon_type_grass {
+.pokemon_type {
   width: auto;
   height: var(--space-xl);
   padding-left: var(--space-s);
   padding-right: var(--space-s);
   border-radius: var(--radius-2xl);
-  background-color: var(--color-type-grass);
   color: var(--color-brand-0);
   display: flex;
   align-items: center;
   margin-right: var(--space-xs);
-}
-.pokemon_type_poison {
-  width: auto;
-  height: var(--space-xl);
-  padding-left: var(--space-s);
-  padding-right: var(--space-s);
-  border-radius: var(--radius-2xl);
-  background-color: var(--color-type-poison);
-  color: var(--color-brand-0);
-  display: flex;
-  align-items: center;
 }
 
 .pokemon_measures {
