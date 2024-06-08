@@ -26,7 +26,7 @@ function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])
   const url = `https://pokeapi.co/api/v2/pokemon`
 
-  const fetchPokemon = async () => {
+  /*const fetchPokemon = async () => {
     try {
       const req = await axios.get(url)
       const pokemones = req.data.results
@@ -61,6 +61,52 @@ function App() {
       ) as PokemonData[]
 
       setPokemons(validResults)
+    } catch (error) {
+      console.error('Error al obtener los datos de los pokemones:', error)
+    }
+  }*/
+
+  const fetchPokemon = async () => {
+    try {
+      let url = 'https://pokeapi.co/api/v2/pokemon?limit=20'
+      const allPokemons = []
+
+      while (url) {
+        const req = await axios.get(url)
+        const pokemones = req.data.results
+
+        const promises = pokemones.map((pokemon: Pokemon) =>
+          axios
+            .get(pokemon.url)
+            .then(response => {
+              const data = response.data
+              console.log(data)
+              const types = data.types.map(type => type.type.name)
+
+              return {
+                name: data.name,
+                id: data.id,
+                weight: data.weight,
+                height: data.height,
+                sprites: data.sprites.front_default,
+                stats: data.stats,
+                types: types,
+              }
+            })
+            .catch(error => {
+              console.error('Error al obtener los datos del pokemon:', error)
+              return null
+            }),
+        )
+
+        const results = await Promise.all(promises)
+        const validResults = results.filter(result => result !== null)
+        allPokemons.push(...validResults)
+
+        url = req.data.next
+      }
+
+      setPokemons(allPokemons)
     } catch (error) {
       console.error('Error al obtener los datos de los pokemones:', error)
     }
