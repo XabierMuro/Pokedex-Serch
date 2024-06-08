@@ -3,8 +3,17 @@ import weightIcon from '../../images/weightIcon.svg'
 import lengthIcon from '../../images/lengthIcon.svg'
 import poisonIcon from '../../images/poisonIcon.svg'
 import grassIcon from '../../images/grassIcon.svg'
-
-export function Card() {
+type PokemonData = {
+  name: string
+  id: number
+  weight: number
+  height: number
+  sprites: string[]
+  stats: number[]
+  types: string[]
+}
+export function Card(props: PokemonData) {
+  const { name, id, weight, height, sprites, stats, types } = props
   return (
     <main className={styles.pokemon_card}>
       <header className={styles.card_header}>
