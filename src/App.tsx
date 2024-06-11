@@ -14,8 +14,28 @@ type PokemonData = {
   height: number
   sprites: string
   stats: number[]
-  types: string[]
+  types: PokemonType[]
 }
+
+type PokemonType =
+  | 'grass'
+  | 'bug'
+  | 'electric'
+  | 'ground'
+  | 'fighting'
+  | 'fire'
+  | 'water'
+  | 'poison'
+  | 'flying'
+  | 'psychic'
+  | 'fairy'
+  | 'dragon'
+  | 'ghost'
+  | 'ice'
+  | 'normal'
+  | 'rock'
+  | 'steel'
+  | 'dark'
 
 type Pokemon = {
   name: string
