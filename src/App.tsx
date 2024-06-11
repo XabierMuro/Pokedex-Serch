@@ -26,14 +26,29 @@ type Stats = {
   spd: number
 }
 
-type PokemonDataApi = {
+type StatsDTO = {
+  base_stat: number
+}
+
+type TypeDTO = {
+  type: {
+    name: string
+  }
+  
+}
+
+type SpritesDTO = {
+  front_default: string
+}
+
+type PokemonDTO = {
   name: string
   id: number
   weight: number
   height: number
-  sprites: string[]
-  stats: any
-  type: any
+  sprites: SpritesDTO
+  stats: StatsDTO[]
+  types: TypeDTO[]
 }
 
 type PokemonType =
@@ -71,10 +86,10 @@ function App() {
       const pokemones = req.data.results
 
       const promises = pokemones.map(async (pokemon: Pokemon) => {
-        const response = await axios.get(pokemon.url)
+        const response= await axios.get(pokemon.url)
         console.log(response)
-        const data = response.data
-        const types = data.types.map((type: any) => type.type.name)
+        const data: PokemonDTO  = response.data
+        const types = data.types.map(type => type.type.name)
         const stats = data.stats.map(stats => stats.base_stat)
         const stats2: Stats = {
           hp: stats[0],

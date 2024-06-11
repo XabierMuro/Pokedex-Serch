@@ -40,7 +40,7 @@ type PokemonType =
   | 'steel'
   | 'dark'
 
-type stats = {
+type Stats = {
   hp: number
   atk: number
   def: number
@@ -55,7 +55,7 @@ type PokemonData = {
   weight: number
   height: number
   sprites: string
-  stats: stats
+  stats: Stats
   types: PokemonType[]
 }
 const typeIcons: { [key in PokemonType]: string } = {
