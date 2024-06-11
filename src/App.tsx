@@ -34,7 +34,6 @@ type TypeDTO = {
   type: {
     name: string
   }
-  
 }
 
 type SpritesDTO = {
@@ -78,6 +77,10 @@ type Pokemon = {
 
 function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])
+
+  const  handleChange = (event => {
+    
+  })
   const url = `https://pokeapi.co/api/v2/pokemon?limit=151`
 
   const fetchPokemon = async () => {
@@ -86,9 +89,8 @@ function App() {
       const pokemones = req.data.results
 
       const promises = pokemones.map(async (pokemon: Pokemon) => {
-        const response= await axios.get(pokemon.url)
-        console.log(response)
-        const data: PokemonDTO  = response.data
+        const response = await axios.get(pokemon.url)
+        const data: PokemonDTO = response.data
         const types = data.types.map(type => type.type.name)
         const stats = data.stats.map(stats => stats.base_stat)
         const stats2: Stats = {
@@ -172,7 +174,7 @@ function App() {
     <>
       <div className="container">
         <Header></Header>
-        <SearchBar></SearchBar>
+        <SearchBar onChange={handleChange}></SearchBar>
         <div className="container_pokemon">
           {pokemons.map((pokemon, key) => (
             <Card key={key} pokemon={pokemon} />

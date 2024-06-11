@@ -2,7 +2,10 @@ import styles from './searchBar.module.css'
 import SearchIcon from '../../images/searchIcon.svg'
 import { useState } from 'react'
 
-export function SearchBar() {
+type SearchBarProps = {
+  onChange: () => void
+}
+export function SearchBar({ onChange }: SearchBarProps) {
   const [isFocused, setIsFocused] = useState(false)
   return (
     <>
@@ -11,7 +14,6 @@ export function SearchBar() {
           src={SearchIcon}
           alt="Search Icon"
           className={isFocused ? styles.search_icon_active : styles.search_icon}
-          
         />
         <input
           className={
@@ -19,6 +21,7 @@ export function SearchBar() {
           }
           placeholder="Search a Pokemon..."
           type="text"
+          onChange={onChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
