@@ -85,6 +85,8 @@
 .pokemon_stats_list {
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .pokemon_img {
@@ -97,22 +99,28 @@
 
 .pokemon_stats {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
   color: var(--color-brand-4);
   font-size: var(--space-s);
   list-style: none;
   align-items: center;
+  gap: var(--space-xs);
+}
+
+.pokemon_stat_label {
+  flex: 0 0 1.5rem;
 }
 
 .pokemon_stat_number {
   color: var(--color-brand-10);
-  padding-left: var(--space-xs);
-  padding-right: var(--space-xs);
+  flex: 0 0 1.2rem;
+  text-align: left;
 }
 
 .pokemon_progress_bar {
-  width: 12.8rem;
   accent-color: var(--color-brand-10);
+  margin-left: var(--space-xs);
+  flex: 0 0 11rem;
 }
 
 .grass {

@@ -101,42 +101,48 @@ export function Card(props: PokemonData) {
         <article>
           <ul className={styles.pokemon_stats_list}>
             <li className={styles.pokemon_stats}>
-              HP<span className={styles.pokemon_stat_number}>{stats[0]}</span>
+              <span className={styles.pokemon_stat_label}>HP</span>
+              <span className={styles.pokemon_stat_number}>{stats[0]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={(stats[0] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
-              ATK<span className={styles.pokemon_stat_number}>{stats[1]}</span>
+              <span className={styles.pokemon_stat_label}>ATK</span>
+              <span className={styles.pokemon_stat_number}>{stats[1]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={(stats[1] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
-              DEF<span className={styles.pokemon_stat_number}>{stats[2]}</span>
+              <span className={styles.pokemon_stat_label}>DEF</span>
+              <span className={styles.pokemon_stat_number}>{stats[2]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={(stats[2] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
-              SAT<span className={styles.pokemon_stat_number}>{stats[3]}</span>
+              <span className={styles.pokemon_stat_label}>SAT</span>
+              <span className={styles.pokemon_stat_number}>{stats[3]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={(stats[3] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
-              SDF<span className={styles.pokemon_stat_number}>{stats[4]}</span>
+              <span className={styles.pokemon_stat_label}>SDF</span>
+              <span className={styles.pokemon_stat_number}>{stats[4]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={(stats[4] * 0.01) / 3}
               />
             </li>
             <li className={styles.pokemon_stats}>
-              SPD<span className={styles.pokemon_stat_number}>{stats[5]}</span>
+              <span className={styles.pokemon_stat_label}>SPD</span>
+              <span className={styles.pokemon_stat_number}>{stats[5]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={(stats[5] * 0.01) / 3}
