@@ -13,8 +13,27 @@ type PokemonData = {
   weight: number
   height: number
   sprites: string
-  stats: number[]
+  stats: Stats
   types: PokemonType[]
+}
+
+type Stats = {
+  hp: number
+  atk: number
+  def: number
+  sat: number
+  sdf: number
+  spd: number
+}
+
+type PokemonDataApi = {
+  name: string
+  id: number
+  weight: number
+  height: number
+  sprites: string[]
+  stats: any
+  type: any
 }
 
 type PokemonType =
@@ -51,36 +70,33 @@ function App() {
       const req = await axios.get(url)
       const pokemones = req.data.results
 
-      const promises = pokemones.map((pokemon: Pokemon) =>
-        axios
-          .get(pokemon.url)
-          .then(response => {
-            const data = response.data
-            console.log(data)
-            const types = data.types.map(type => type.type.name)
-            const stats = data.stats.map(stats => stats.base_stat)
-
-            return {
-              name: data.name,
-              id: data.id,
-              weight: data.weight,
-              height: data.height,
-              sprites: data.sprites.front_default,
-              stats: stats,
-              types: types,
-            }
-          })
-          .catch(error => {
-            console.error('Error al obtener los datos del pokemon:', error)
-            return null
-          }),
-      )
+      const promises = pokemones.map(async (pokemon: Pokemon) => {
+        const response = await axios.get(pokemon.url)
+        console.log(response)
+        const data = response.data
+        const types = data.types.map((type: any) => type.type.name)
+        const stats = data.stats.map(stats => stats.base_stat)
+        const stats2: Stats = {
+          hp: stats[0],
+          atk: stats[1],
+          def: stats[2],
+          sat: stats[3],
+          sdf: stats[4],
+          spd: stats[5],
+        }
+        return {
+          name: data.name,
+          id: data.id,
+          weight: data.weight,
+          height: data.height,
+          sprites: data.sprites.front_default,
+          stats: stats2,
+          types: types,
+        }
+      })
 
       const results = await Promise.all(promises)
-      const validResults = results.filter(
-        result => result !== null,
-      ) as PokemonData[]
-
+      const validResults = results.filter(result => result !== null)
       setPokemons(validResults)
     } catch (error) {
       console.error('Error al obtener los datos de los pokemones:', error)
@@ -144,7 +160,7 @@ function App() {
         <SearchBar></SearchBar>
         <div className="container_pokemon">
           {pokemons.map((pokemon, key) => (
-            <Card key={key} {...pokemon} />
+            <Card key={key} pokemon={pokemon} />
           ))}
         </div>
         <Footer></Footer>

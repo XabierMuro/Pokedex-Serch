@@ -39,13 +39,23 @@ type PokemonType =
   | 'rock'
   | 'steel'
   | 'dark'
+
+type stats = {
+  hp: number
+  atk: number
+  def: number
+  sat: number
+  sdf: number
+  spd: number
+}
+
 type PokemonData = {
   name: string
   id: number
   weight: number
   height: number
   sprites: string
-  stats: number[]
+  stats: stats
   types: PokemonType[]
 }
 const typeIcons: { [key in PokemonType]: string } = {
@@ -69,15 +79,8 @@ const typeIcons: { [key in PokemonType]: string } = {
   dark: darkIcon,
 }
 
-export function Card({
-  name,
-  id,
-  weight,
-  height,
-  sprites,
-  stats,
-  types,
-}: PokemonData) {
+export function Card({ pokemon }: { pokemon: PokemonData }) {
+  const { name, id, weight, height, sprites, stats, types } = pokemon
   const extraClassName = types[0]
   const image = sprites != null ? sprites : smallPokeballIcon
   return (
@@ -110,55 +113,55 @@ export function Card({
           <ul className={styles.pokemon_stats_list}>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>HP</span>
-              <span className={styles.pokemon_stat_number}>{stats[0]}</span>
+              <span className={styles.pokemon_stat_number}>{stats.hp}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[0]}
+                value={stats.hp}
                 max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>ATK</span>
-              <span className={styles.pokemon_stat_number}>{stats[1]}</span>
+              <span className={styles.pokemon_stat_number}>{stats.atk}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[1]}
+                value={stats.atk}
                 max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>DEF</span>
-              <span className={styles.pokemon_stat_number}>{stats[2]}</span>
+              <span className={styles.pokemon_stat_number}>{stats.def}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[2]}
+                value={stats.def}
                 max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>SAT</span>
-              <span className={styles.pokemon_stat_number}>{stats[3]}</span>
+              <span className={styles.pokemon_stat_number}>{stats.sat}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[3]}
+                value={stats.sat}
                 max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>SDF</span>
-              <span className={styles.pokemon_stat_number}>{stats[4]}</span>
+              <span className={styles.pokemon_stat_number}>{stats.sdf}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[4]}
+                value={stats.sdf}
                 max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>SPD</span>
-              <span className={styles.pokemon_stat_number}>{stats[5]}</span>
+              <span className={styles.pokemon_stat_number}>{stats.spd}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={stats[5]}
+                value={stats.spd}
                 max={255}
               />
             </li>

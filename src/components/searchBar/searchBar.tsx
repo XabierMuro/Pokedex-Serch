@@ -11,6 +11,7 @@ export function SearchBar() {
           src={SearchIcon}
           alt="Search Icon"
           className={isFocused ? styles.search_icon_active : styles.search_icon}
+          
         />
         <input
           className={
