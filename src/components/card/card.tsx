@@ -46,7 +46,7 @@ type PokemonData = {
   height: number
   sprites: string
   stats: number[]
-  types: string[]
+  types: PokemonType[]
 }
 const typeIcons: { [key in PokemonType]: string } = {
   grass: grassIcon,
@@ -68,8 +68,16 @@ const typeIcons: { [key in PokemonType]: string } = {
   steel: steelIcon,
   dark: darkIcon,
 }
-export function Card(props: PokemonData) {
-  const { name, id, weight, height, sprites, stats, types } = props
+
+export function Card({
+  name,
+  id,
+  weight,
+  height,
+  sprites,
+  stats,
+  types,
+}: PokemonData) {
   const extraClassName = types[0]
   const image = sprites != null ? sprites : smallPokeballIcon
   return (
@@ -105,7 +113,8 @@ export function Card(props: PokemonData) {
               <span className={styles.pokemon_stat_number}>{stats[0]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={(stats[0] * 0.01) / 3}
+                value={stats[0]}
+                max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -113,7 +122,8 @@ export function Card(props: PokemonData) {
               <span className={styles.pokemon_stat_number}>{stats[1]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={(stats[1] * 0.01) / 3}
+                value={stats[1]}
+                max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -121,7 +131,8 @@ export function Card(props: PokemonData) {
               <span className={styles.pokemon_stat_number}>{stats[2]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={(stats[2] * 0.01) / 3}
+                value={stats[2]}
+                max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -129,7 +140,8 @@ export function Card(props: PokemonData) {
               <span className={styles.pokemon_stat_number}>{stats[3]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={(stats[3] * 0.01) / 3}
+                value={stats[3]}
+                max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -137,7 +149,8 @@ export function Card(props: PokemonData) {
               <span className={styles.pokemon_stat_number}>{stats[4]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={(stats[4] * 0.01) / 3}
+                value={stats[4]}
+                max={255}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -145,7 +158,8 @@ export function Card(props: PokemonData) {
               <span className={styles.pokemon_stat_number}>{stats[5]}</span>
               <progress
                 className={styles.pokemon_progress_bar}
-                value={(stats[5] * 0.01) / 3}
+                value={stats[5]}
+                max={255}
               />
             </li>
           </ul>

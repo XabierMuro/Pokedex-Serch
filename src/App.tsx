@@ -26,7 +26,7 @@ function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])
   const url = `https://pokeapi.co/api/v2/pokemon`
 
-  const fetchPokemon = async () => {
+  /*const fetchPokemon = async () => {
     try {
       const req = await axios.get(url)
       const pokemones = req.data.results
@@ -65,9 +65,9 @@ function App() {
     } catch (error) {
       console.error('Error al obtener los datos de los pokemones:', error)
     }
-  }
+  }*/
 
-  /*const fetchPokemon = async () => {
+  const fetchPokemon = async () => {
     try {
       let url = 'https://pokeapi.co/api/v2/pokemon?limit=20'
       const allPokemons = []
@@ -112,7 +112,7 @@ function App() {
     } catch (error) {
       console.error('Error al obtener los datos de los pokemones:', error)
     }
-  }*/
+  }
 
   useEffect(() => {
     fetchPokemon()
