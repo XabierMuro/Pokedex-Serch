@@ -77,10 +77,13 @@ type Pokemon = {
 
 function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])
+  const [filteredPokemons, setFilteredPokemons] = useState<PokemonData[]>([])
 
-  const  handleChange = (event => {
-    
-  })
+  const handleChange = (query: string) => {
+    setFilteredPokemons(
+      pokemons.filter(pokemon => pokemon.name.includes(query)),
+    )
+  }
   const url = `https://pokeapi.co/api/v2/pokemon?limit=151`
 
   const fetchPokemon = async () => {
@@ -115,6 +118,7 @@ function App() {
       const results = await Promise.all(promises)
       const validResults = results.filter(result => result !== null)
       setPokemons(validResults)
+      setFilteredPokemons(validResults)
     } catch (error) {
       console.error('Error al obtener los datos de los pokemones:', error)
     }
@@ -176,7 +180,7 @@ function App() {
         <Header></Header>
         <SearchBar onChange={handleChange}></SearchBar>
         <div className="container_pokemon">
-          {pokemons.map((pokemon, key) => (
+          {filteredPokemons.map((pokemon, key) => (
             <Card key={key} pokemon={pokemon} />
           ))}
         </div>

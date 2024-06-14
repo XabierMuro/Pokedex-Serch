@@ -3,10 +3,16 @@ import SearchIcon from '../../images/searchIcon.svg'
 import { useState } from 'react'
 
 type SearchBarProps = {
-  onChange: () => void
+  onChange: (query: string) => void
 }
+
 export function SearchBar({ onChange }: SearchBarProps) {
   const [isFocused, setIsFocused] = useState(false)
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(event.target.value)
+    }
+  }
   return (
     <>
       <div className={styles.search_container}>
@@ -21,7 +27,7 @@ export function SearchBar({ onChange }: SearchBarProps) {
           }
           placeholder="Search a Pokemon..."
           type="text"
-          onChange={onChange}
+          onChange={handleChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
