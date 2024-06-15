@@ -6,10 +6,13 @@
   padding: 15%;
 }
 
-.notFound_image {
+.error_image {
   width: var(--space-4xl);
   height: var(--space-4xl);
   color: var(--color-brand-3);
 }
 
-
+.error_message {
+  max-width: 17rem;
+  text-align: center;
+}

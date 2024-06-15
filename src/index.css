@@ -91,7 +91,12 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 57.5rem;
+}
+
+@media (min-width: 768px) {
+  .container_pokemon {
+    width: 57.5rem;
+  }
 }
 
 /* put input focus changes here */

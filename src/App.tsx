@@ -5,6 +5,7 @@ import { SearchBar } from './components/searchBar/searchBar'
 import { Footer } from './components/footer/footer'
 import { NotFound } from './components/notFound/notFound'
 import { LoadingCard } from './components/loadingCard/loadingCard'
+import { ErrorApi } from './components/errorApi/errorApi'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -84,6 +85,7 @@ function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])
   const [filteredPokemons, setFilteredPokemons] = useState<PokemonData[]>([])
   const [search, setSearch] = useState<string>('')
+  const [errorApi, seterrorApi] = useState<boolean>(false)
 
   useEffect(() => {
     fetchPokemon()
@@ -136,10 +138,20 @@ function App() {
       setPokemons(validResults)
       setFilteredPokemons(validResults)
     } catch (error) {
+      seterrorApi(true)
       console.error('Error al obtener los datos de los pokemones:', error)
     }
   }
-
+  if (errorApi) {
+    return (
+      <div className="container">
+        <Header />
+        <SearchBar onChange={handleChange} />
+        <ErrorApi />
+        <Footer />
+      </div>
+    )
+  }
   if (pokemons.length === 0) {
     return (
       <div className="container">
