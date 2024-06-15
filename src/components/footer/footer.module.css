@@ -4,4 +4,6 @@
   background-color: var(--color-brand-10);
   color: var(--color-brand-0);
   margin-top: auto;
+  text-align: center;
+  font-size: var(--font-size-mobile-caption);
 }

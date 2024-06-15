@@ -14,24 +14,20 @@ export function SearchBar({ onChange }: SearchBarProps) {
     }
   }
   return (
-    <>
-      <div className={styles.search_container}>
-        <img
-          src={SearchIcon}
-          alt="Search Icon"
-          className={isFocused ? styles.search_icon_active : styles.search_icon}
-        />
-        <input
-          className={
-            isFocused ? styles.search_input_active : styles.search_input
-          }
-          placeholder="Search a Pokemon..."
-          type="text"
-          onChange={handleChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        />
-      </div>
-    </>
+    <div className={styles.search_container}>
+      <img
+        src={SearchIcon}
+        alt="Search Icon"
+        className={isFocused ? styles.search_icon_active : styles.search_icon}
+      />
+      <input
+        className={isFocused ? styles.search_input_active : styles.search_input}
+        placeholder="Search a Pokemon..."
+        type="text"
+        onChange={handleChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+      />
+    </div>
   )
 }

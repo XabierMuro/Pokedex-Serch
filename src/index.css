@@ -91,11 +91,15 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 768px) {
   .container_pokemon {
     width: 57.5rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

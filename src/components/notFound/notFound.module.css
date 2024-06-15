@@ -3,13 +3,19 @@
   flex-direction: column;
   margin: 0 auto;
   align-items: center;
-  padding: 15%;
+  padding-top: 26%;
 }
 
 .notFound_image {
   width: var(--space-4xl);
   height: var(--space-4xl);
   color: var(--color-brand-3);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-top: 15%;
+  }
 }
 
 

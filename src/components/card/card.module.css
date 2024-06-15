@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 17.81rem;
+  width: 100%;
   height: 25rem;
   padding: var(--space-xs);
   border-radius: var(--radius-xl);
@@ -120,7 +120,17 @@
 .pokemon_progress_bar {
   accent-color: var(--color-brand-10);
   margin-left: var(--space-xs);
-  flex: 0 0 11rem;
+  flex: 0 0 calc(100% - 4.5rem);
+}
+
+@media (min-width: 768px) {
+  .pokemon_card {
+    width: 17.81rem;
+  }
+
+  .pokemon_progress_bar {
+    flex: 0 0 11rem;
+  }
 }
 
 .grass {

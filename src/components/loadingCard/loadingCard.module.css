@@ -4,16 +4,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 16.81rem;
+  width: 100%;
   height: 24rem;
   padding: var(--space-xs);
   background-color: var(--color-brand-2);
   border-radius: var(--radius-xl);
   border: solid var(--color-brand-0) var(--space-xs);
   box-shadow: var(--shadow-l);
+  margin: var(--space-xs);
 }
 
 .card_image {
   width: 12rem;
   height: 12rem;
+}
+
+@media (min-width: 768px) {
+  .pokemon_card {
+    width: 16.81rem;
+  }
 }

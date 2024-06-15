@@ -3,7 +3,7 @@
   flex-direction: column;
   margin: 0 auto;
   align-items: center;
-  padding: 15%;
+  padding-top: 26%;
 }
 
 .error_image {
@@ -15,4 +15,10 @@
 .error_message {
   max-width: 17rem;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-top: 15%;
+  }
 }
