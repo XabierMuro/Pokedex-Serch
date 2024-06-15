@@ -10,7 +10,7 @@ export function NotFound({ notFoundMessage }: { notFoundMessage: string }) {
         alt={`Not found icon`}
       />
       <p className={styles.notFound_message}>
-        There is no results for {notFoundMessage}
+        There is no results for "{notFoundMessage}"
       </p>
     </div>
   )

@@ -38,7 +38,11 @@ type TypeDTO = {
 }
 
 type SpritesDTO = {
-  front_default: string
+  other: {
+    'official-artwork': {
+      front_default: string
+    }
+  }
 }
 
 type PokemonDTO = {
@@ -79,7 +83,7 @@ type Pokemon = {
 function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])
   const [filteredPokemons, setFilteredPokemons] = useState<PokemonData[]>([])
-  const [search, setSearch] = useState<String>('')
+  const [search, setSearch] = useState<string>('')
 
   useEffect(() => {
     fetchPokemon()
@@ -121,7 +125,7 @@ function App() {
           id: data.id,
           weight: data.weight / 10,
           height: data.height / 10,
-          sprites: data.sprites.front_default,
+          sprites: data.sprites.other['official-artwork'].front_default,
           stats: stats,
           types: types,
         }
