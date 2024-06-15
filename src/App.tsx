@@ -142,7 +142,7 @@ function App() {
       console.error('Error al obtener los datos de los pokemones:', error)
     }
   }
-  if (errorApi) {
+  if (errorApi ) {
     return (
       <div className="container">
         <Header />
