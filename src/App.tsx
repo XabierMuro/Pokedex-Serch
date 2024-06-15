@@ -6,6 +6,7 @@ import { Footer } from './components/footer/footer'
 import { NotFound } from './components/notFound/notFound'
 import { LoadingCard } from './components/loadingCard/loadingCard'
 import { ErrorApi } from './components/errorApi/errorApi'
+import { fetchPokemon } from './infrastructure/repositories/pokemon.repository'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -28,34 +29,6 @@ type Stats = {
   spd: number
 }
 
-type StatsDTO = {
-  base_stat: number
-}
-
-type TypeDTO = {
-  type: {
-    name: string
-  }
-}
-
-type SpritesDTO = {
-  other: {
-    'official-artwork': {
-      front_default: string
-    }
-  }
-}
-
-type PokemonDTO = {
-  name: string
-  id: number
-  weight: number
-  height: number
-  sprites: SpritesDTO
-  stats: StatsDTO[]
-  types: TypeDTO[]
-}
-
 type PokemonType =
   | 'grass'
   | 'bug'
@@ -76,25 +49,25 @@ type PokemonType =
   | 'steel'
   | 'dark'
 
-type Pokemon = {
-  name: string
-  url: string
-}
-
 function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])
-  const [filteredPokemons, setFilteredPokemons] = useState<PokemonData[]>([])
   const [search, setSearch] = useState<string>('')
-  const [errorApi, seterrorApi] = useState<boolean>(false)
+  const [errorApi, setErrorApi] = useState<boolean>(false)
 
   useEffect(() => {
-    fetchPokemon()
+    onLoad()
   }, [])
 
+  const onLoad = async () => {
+    const result = await fetchPokemon()
+    if (result !== false) {
+      setPokemons(result)
+      return
+    }
+    setErrorApi(true)
+  }
+
   const handleChange = (query: string) => {
-    setFilteredPokemons(
-      pokemons.filter(pokemon => pokemon.name.includes(query)),
-    )
     setSearch(query)
   }
   const emptyArray = []
@@ -102,47 +75,7 @@ function App() {
     emptyArray.push(i)
   }
 
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=151`
-
-  const fetchPokemon = async () => {
-    try {
-      const req = await axios.get(url)
-      const pokemones = req.data.results
-
-      const promises = pokemones.map(async (pokemon: Pokemon) => {
-        const response = await axios.get(pokemon.url)
-        const data: PokemonDTO = response.data
-        const types = data.types.map(type => type.type.name)
-        const base_stats = data.stats.map(stats => stats.base_stat)
-        const stats: Stats = {
-          hp: base_stats[0],
-          atk: base_stats[1],
-          def: base_stats[2],
-          sat: base_stats[3],
-          sdf: base_stats[4],
-          spd: base_stats[5],
-        }
-        return {
-          name: data.name,
-          id: data.id,
-          weight: data.weight / 10,
-          height: data.height / 10,
-          sprites: data.sprites.other['official-artwork'].front_default,
-          stats: stats,
-          types: types,
-        }
-      })
-
-      const results = await Promise.all(promises)
-      const validResults = results.filter(result => result !== null)
-      setPokemons(validResults)
-      setFilteredPokemons(validResults)
-    } catch (error) {
-      seterrorApi(true)
-      console.error('Error al obtener los datos de los pokemones:', error)
-    }
-  }
-  if (errorApi ) {
+  if (errorApi) {
     return (
       <div className="container">
         <Header />
@@ -152,6 +85,7 @@ function App() {
       </div>
     )
   }
+
   if (pokemons.length === 0) {
     return (
       <div className="container">
@@ -167,7 +101,10 @@ function App() {
     )
   }
 
-  if (filteredPokemons.length === 0 && pokemons.length !== 0) {
+  const filteredPokemons: PokemonData[] = pokemons.filter(pokemon =>
+    pokemon.name.includes(search),
+  )
+  if (filteredPokemons.length === 0) {
     return (
       <div className="container">
         <Header />
