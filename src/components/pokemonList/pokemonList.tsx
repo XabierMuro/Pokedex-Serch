@@ -6,7 +6,7 @@ import { PokemonData } from '../../models/pokemon'
 
 type PropsPokemonList = {
   error: boolean
-  pokemons: PokemonData[]
+  pokemons: PokemonData[]| undefined
   search: string
 }
 
@@ -17,10 +17,7 @@ for (let i = 0; i < 151; i++) {
 
 export function PokemonList(props: PropsPokemonList) {
   const { error, pokemons, search } = props
-  const filteredPokemons: PokemonData[] = pokemons.filter(pokemon =>
-    pokemon.name.toUpperCase().includes(search.toUpperCase()),
-  )
-
+  
   if (error) {
     return (
       <div className="container">
@@ -29,7 +26,7 @@ export function PokemonList(props: PropsPokemonList) {
     )
   }
 
-  if (pokemons.length === 0) {
+  if (pokemons === undefined) {
     return (
       <div className="container_pokemon">
         {emptyArray.map(key => (
@@ -39,13 +36,17 @@ export function PokemonList(props: PropsPokemonList) {
     )
   }
 
+  const filteredPokemons: PokemonData[] = pokemons.filter(pokemon =>
+    pokemon.name.toUpperCase().includes(search.toUpperCase()),
+  )
+
   if (filteredPokemons.length === 0) {
     return <NotFound notFoundMessage={search} />
   }
 
   return (
     <div className="container_pokemon">
-      {filteredPokemons?.map((pokemon, key) => (
+      {filteredPokemons.map((pokemon, key) => (
         <Card key={key} pokemon={pokemon} />
       ))}
     </div>

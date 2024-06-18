@@ -2,13 +2,13 @@ import './index.css'
 import { Header } from './components/header/header'
 import { SearchBar } from './components/searchBar/searchBar'
 import { Footer } from './components/footer/footer'
-import { fetchPokemon } from './infrastructure/repositories/pokemon.repository'
+import { fetchPokemons } from './infrastructure/repositories/pokemon.repository'
 import { useState, useEffect } from 'react'
 import { PokemonList } from './components/pokemonList/pokemonList'
 import { PokemonData } from './models/pokemon'
 
 function App() {
-  const [pokemons, setPokemons] = useState<PokemonData[]>([])
+  const [pokemons, setPokemons] = useState<PokemonData[]|undefined>(undefined)
   const [search, setSearch] = useState<string>('')
   const [errorApi, setErrorApi] = useState<boolean>(false)
 
@@ -17,12 +17,12 @@ function App() {
   }, [])
 
   const onLoad = async () => {
-    const result = await fetchPokemon()
-    if (result !== false) {
-      setPokemons(result)
-      return
+    try {
+      const result = await fetchPokemons()
+        setPokemons(result)
+    } catch (error) {
+      setErrorApi(true)
     }
-    setErrorApi(true)
   }
 
   const handleChange = (query: string) => {

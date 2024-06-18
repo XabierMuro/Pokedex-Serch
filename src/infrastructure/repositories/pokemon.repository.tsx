@@ -3,8 +3,8 @@ import { PokemonDTO } from '../../models/pokemonDTO'
 import { PokemonData, Pokemon, Stats } from '../../models/pokemon'
 
 const url = `https://pokeapi.co/api/v2/pokemon?limit=151`
-export const fetchPokemon = async (): Promise<false | PokemonData[]> => {
-  try {
+export const fetchPokemons = async (): Promise<PokemonData[]> => {
+  
     const req = await axios.get(url)
     const pokemones = req.data.results
 
@@ -35,8 +35,5 @@ export const fetchPokemon = async (): Promise<false | PokemonData[]> => {
     const results = await Promise.all(promises)
     const validResults = results.filter(result => result !== null)
     return validResults
-  } catch (error) {
-    console.error('Error al obtener los datos de los pokemones:', error)
-    return false
-  }
+  
 }
