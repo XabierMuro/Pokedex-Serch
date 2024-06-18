@@ -18,7 +18,7 @@ for (let i = 0; i < 151; i++) {
 export function PokemonList(props: PropsPokemonList) {
   const { error, pokemons, search } = props
   const filteredPokemons: PokemonData[] = pokemons.filter(pokemon =>
-    pokemon.name.includes(search),
+    pokemon.name.toUpperCase().includes(search.toUpperCase()),
   )
 
   if (error) {
