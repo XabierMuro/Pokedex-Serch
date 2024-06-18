@@ -1,5 +1,6 @@
 .card_name {
   margin: 0;
+  text-transform: capitalize;
 }
 
 .card_number {
