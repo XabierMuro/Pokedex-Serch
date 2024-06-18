@@ -5,7 +5,7 @@ import { Footer } from './components/footer/footer'
 import { fetchPokemon } from './infrastructure/repositories/pokemon.repository'
 import { useState, useEffect } from 'react'
 import { PokemonList } from './components/pokemonList/pokemonList'
-import { PokemonData } from './domain/models/pokemon'
+import { PokemonData } from './models/pokemon'
 
 function App() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([])

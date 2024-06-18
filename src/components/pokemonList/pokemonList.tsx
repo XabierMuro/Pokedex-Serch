@@ -2,7 +2,7 @@ import { Card } from '../card/card'
 import { NotFound } from '../notFound/notFound'
 import { LoadingCard } from '../loadingCard/loadingCard'
 import { ErrorApi } from '../errorApi/errorApi'
-import { PokemonData } from '../../domain/models/pokemon'
+import { PokemonData } from '../../models/pokemon'
 
 type PropsPokemonList = {
   error: boolean

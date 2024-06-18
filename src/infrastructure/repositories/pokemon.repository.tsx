@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { PokemonDTO } from '../../infrastructure/axios/pokemonDTO'
-import { PokemonData, Pokemon, Stats } from '../../domain/models/pokemon'
+import { PokemonDTO } from '../../models/pokemonDTO'
+import { PokemonData, Pokemon, Stats } from '../../models/pokemon'
 
 const url = `https://pokeapi.co/api/v2/pokemon?limit=151`
 export const fetchPokemon = async (): Promise<false | PokemonData[]> => {
