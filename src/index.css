@@ -79,6 +79,10 @@
 * {
   font-family: 'Kanit';
 }
+body{
+  margin: 0;
+  padding: 0;
+}
 
 .container {
   display: flex;
