@@ -4,7 +4,7 @@ import {Footer} from '../src/components/footer/footer'
 import {SearchBar} from '../src/components/searchBar/searchBar'
 import App from '../src/App'
 import React from 'react'
-import * as pokemonFile from '../src/infrastructure/repositories/pokemon.repository'
+import * as pokemonFile from '../src/infrastructure/pokemonRepository'
 import { vi } from 'vitest'
 import '@testing-library/jest-dom';
 

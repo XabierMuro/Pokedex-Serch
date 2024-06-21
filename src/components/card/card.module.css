@@ -55,6 +55,7 @@
   display: flex;
   align-items: center;
   margin-right: var(--space-xs);
+  text-transform: capitalize;
 }
 
 .pokemon_measures {
