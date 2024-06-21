@@ -81,7 +81,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.hp}
-                max={255}
+                max={250}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -90,7 +90,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.atk}
-                max={255}
+                max={250}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -99,7 +99,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.def}
-                max={255}
+                max={250}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -108,7 +108,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.sat}
-                max={255}
+                max={250}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -117,7 +117,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.sdf}
-                max={255}
+                max={250}
               />
             </li>
             <li className={styles.pokemon_stats}>
@@ -126,7 +126,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.spd}
-                max={255}
+                max={250}
               />
             </li>
           </ul>
