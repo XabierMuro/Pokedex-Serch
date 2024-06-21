@@ -20,44 +20,8 @@ import rockIcon from '../../images/rockIcon.svg'
 import steelIcon from '../../images/steelIcon.svg'
 import darkIcon from '../../images/darkIcon.svg'
 import smallPokeballIcon from '../../images/smallPokeballIcon.svg'
-type PokemonType =
-  | 'grass'
-  | 'bug'
-  | 'electric'
-  | 'ground'
-  | 'fighting'
-  | 'fire'
-  | 'water'
-  | 'poison'
-  | 'flying'
-  | 'psychic'
-  | 'fairy'
-  | 'dragon'
-  | 'ghost'
-  | 'ice'
-  | 'normal'
-  | 'rock'
-  | 'steel'
-  | 'dark'
+import { PokemonData, PokemonType } from '../../models/pokemon'
 
-type Stats = {
-  hp: number
-  atk: number
-  def: number
-  sat: number
-  sdf: number
-  spd: number
-}
-
-type PokemonData = {
-  name: string
-  id: number
-  weight: number
-  height: number
-  sprites: string
-  stats: Stats
-  types: PokemonType[]
-}
 const typeIcons: { [key in PokemonType]: string } = {
   grass: grassIcon,
   bug: bugIcon,
