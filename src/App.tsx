@@ -1,13 +1,14 @@
 import './index.css'
-import { Header } from './components/header/header'
-import { SearchBar } from './components/searchBar/searchBar'
-import { Footer } from './components/footer/footer'
-import { fetchPokemons } from './infrastructure/pokemonRepository'
+import { Header } from './application/components/header/header'
+import { SearchBar } from './application/components/searchBar/searchBar'
+import { Footer } from './application/components/footer/footer'
+import { getPokemon } from './application/getPokemonService'
 import { useState, useEffect } from 'react'
-import { PokemonList } from './components/pokemonList/pokemonList'
-import { PokemonData } from './models/pokemon'
+import { PokemonList } from './application/components/pokemonList/pokemonList'
+import { PokemonData } from './domain/pokemon'
 
 function App() {
+  
   const [pokemons, setPokemons] = useState<PokemonData[]|undefined>(undefined)
   const [search, setSearch] = useState<string>('')
   const [errorApi, setErrorApi] = useState<boolean>(false)
@@ -18,7 +19,7 @@ function App() {
 
   const onLoad = async () => {
     try {
-      const result = await fetchPokemons()
+      const result = await getPokemon()
         setPokemons(result)
     } catch (error) {
       setErrorApi(true)

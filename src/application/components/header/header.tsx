@@ -1,5 +1,5 @@
 import styles from './header.module.css'
-import pokeballIcon from '../../images/pokeballIcon.svg'
+import pokeballIcon from '../../../images/pokeballIcon.svg'
 
 export function Header() {
   return (

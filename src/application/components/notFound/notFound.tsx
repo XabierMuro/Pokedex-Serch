@@ -1,5 +1,5 @@
 import styles from './notFound.module.css'
-import notFoundIcon from '../../images/notFoundIcon.svg'
+import notFoundIcon from '../../../images/notFoundIcon.svg'
 
 export function NotFound({ notFoundMessage }: { notFoundMessage: string }) {
   return (

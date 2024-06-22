@@ -1,5 +1,5 @@
 import styles from './searchBar.module.css'
-import SearchIcon from '../../images/searchIcon.svg'
+import SearchIcon from '../../../images/searchIcon.svg'
 import { useState } from 'react'
 
 type SearchBarProps = {

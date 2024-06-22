@@ -1,5 +1,5 @@
 import styles from './errorApi.module.css'
-import errorIcon from '../../images/errorIcon.svg'
+import errorIcon from '../../../images/errorIcon.svg'
 
 export function ErrorApi() {
   return (

@@ -1,5 +1,5 @@
 import styles from './loadingCard.module.css'
-import bigPokeballIcon from '../../images/bigPokeballIcon.svg'
+import bigPokeballIcon from '../../../images/bigPokeballIcon.svg'
 
 export function LoadingCard() {
   return (

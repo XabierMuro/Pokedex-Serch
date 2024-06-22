@@ -122,8 +122,7 @@
 
 .pokemon_progress_bar {
   accent-color: var(--color-brand-10);
-  margin-left: var(--space-xs);
-  flex: 0 0 calc(100% - 5rem);
+  flex: 0 0 calc(100% - 4.5rem);
 }
 
 @media (min-width: 768px) {
