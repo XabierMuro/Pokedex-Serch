@@ -25,7 +25,7 @@ const mockPokemon: PokemonData = {
     it('should render the name and identification of the Pokémon', () => {
       render(<Card pokemon={mockPokemon} />);
       expect(screen.getByText('bulbasaur')).toBeInTheDocument();
-      expect(screen.getByText('#1')).toBeInTheDocument();
+      expect(screen.getByText('#001')).toBeInTheDocument();
     });
   
     it('should display the image of the Pokémon', () => {
@@ -55,17 +55,17 @@ const mockPokemon: PokemonData = {
       render(<Card pokemon={mockPokemon} />);
 
       expect(screen.getByText('HP')).toBeInTheDocument();
-      expect(screen.getByText('45')).toBeInTheDocument();
+      expect(screen.getByText('045')).toBeInTheDocument();
       expect(screen.getByText('ATK')).toBeInTheDocument();
-      expect(screen.getByText('49')).toBeInTheDocument();
+      expect(screen.getByText('049')).toBeInTheDocument();
       expect(screen.getByText('DEF')).toBeInTheDocument();
-      expect(screen.getByText('50')).toBeInTheDocument();
+      expect(screen.getByText('050')).toBeInTheDocument();
       expect(screen.getByText('SAT')).toBeInTheDocument();
-      expect(screen.getByText('65')).toBeInTheDocument();
+      expect(screen.getByText('065')).toBeInTheDocument();
       expect(screen.getByText('SDF')).toBeInTheDocument();
-      expect(screen.getByText('66')).toBeInTheDocument();
+      expect(screen.getByText('066')).toBeInTheDocument();
       expect(screen.getByText('SPD')).toBeInTheDocument();
-      expect(screen.getByText('47')).toBeInTheDocument();
+      expect(screen.getByText('047')).toBeInTheDocument();
     });
   
     it('should render the progress bar values correctly', () => {
@@ -76,7 +76,7 @@ const mockPokemon: PokemonData = {
       const [hpBar, atkBar, defBar, satBar, sdfBar, spdBar] = progressBars;
   
       expect(hpBar).toHaveAttribute('value', '45');
-      expect(hpBar).toHaveAttribute('max', '255');
+      expect(hpBar).toHaveAttribute('max', '250');
       expect(atkBar).toHaveAttribute('value', '49');
       expect(defBar).toHaveAttribute('value', '50');
       expect(satBar).toHaveAttribute('value', '65');

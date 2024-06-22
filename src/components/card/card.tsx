@@ -47,11 +47,12 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
   const { name, id, weight, height, sprites, stats, types } = pokemon
   const extraClassName = types[0]
   const image = sprites != null ? sprites : smallPokeballIcon
+  const identifier = id < 10 ? '00'+id : id < 100 ? '0'+id : id
   return (
     <main className={`${styles.pokemon_card} ${styles[extraClassName]}`}>
       <header className={styles.card_header}>
         <h3 className={styles.card_name}>{name}</h3>
-        <h3 className={styles.card_number}>#{id}</h3>
+        <h3 className={styles.card_number}>#{identifier}</h3>
       </header>
       <section className={styles.pokemon_stats_container}>
         <img className={styles.pokemon_img} src={image} alt={`${name} image`} />
@@ -77,7 +78,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
           <ul className={styles.pokemon_stats_list}>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>HP</span>
-              <span className={styles.pokemon_stat_number}>{stats.hp}</span>
+              <span className={styles.pokemon_stat_number}>{stats.hp < 100 ? '0'+stats.hp : stats.hp}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.hp}
@@ -86,7 +87,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>ATK</span>
-              <span className={styles.pokemon_stat_number}>{stats.atk}</span>
+              <span className={styles.pokemon_stat_number}>{stats.atk < 100 ? '0'+stats.atk : stats.atk}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.atk}
@@ -95,7 +96,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>DEF</span>
-              <span className={styles.pokemon_stat_number}>{stats.def}</span>
+              <span className={styles.pokemon_stat_number}>{stats.def < 100 ? '0'+stats.def : stats.def}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.def}
@@ -104,7 +105,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>SAT</span>
-              <span className={styles.pokemon_stat_number}>{stats.sat}</span>
+              <span className={styles.pokemon_stat_number}>{stats.sat < 100 ? '0'+stats.sat : stats.sat}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.sat}
@@ -113,7 +114,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>SDF</span>
-              <span className={styles.pokemon_stat_number}>{stats.sdf}</span>
+              <span className={styles.pokemon_stat_number}>{stats.sdf < 100 ? '0'+stats.sdf : stats.sdf}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.sdf}
@@ -122,7 +123,7 @@ export function Card({ pokemon }: { pokemon: PokemonData }) {
             </li>
             <li className={styles.pokemon_stats}>
               <span className={styles.pokemon_stat_label}>SPD</span>
-              <span className={styles.pokemon_stat_number}>{stats.spd}</span>
+              <span className={styles.pokemon_stat_number}>{stats.spd < 100 ? '0'+stats.spd : stats.spd}</span>
               <progress
                 className={styles.pokemon_progress_bar}
                 value={stats.spd}
