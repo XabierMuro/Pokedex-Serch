@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { fetchPokemons } from '../../src/infrastructure/pokemonRepository';
+import { AxiosPokemonRepository } from '../../src/infrastructure/axiosPokemonRepository';
 
 
 const mock = new MockAdapter(axios);
@@ -14,7 +14,7 @@ afterEach(() => {
   mock.resetHandlers();
 });
 
-describe('fetchPokemons', () => {
+describe('getPokemons', () => {
     it('should get and transform pokemon list correctly', async () => {
       mock.onGet('https://pokeapi.co/api/v2/pokemon?limit=151').reply(200, {
         results: [
@@ -63,8 +63,9 @@ describe('fetchPokemons', () => {
         ]
       });
   
-      const pokemons = await fetchPokemons();
-     
+      const repository = new AxiosPokemonRepository();
+      const pokemons = await repository.getPokemon();
+    
       expect(pokemons).toEqual([
         {
           name: 'bulbasaur',
@@ -111,7 +112,8 @@ describe('fetchPokemons', () => {
   
       mock.onGet('https://pokeapi.co/api/v2/pokemon/1/').reply(500);
   
-      await expect(fetchPokemons()).rejects.toThrow();
+      const repository = new AxiosPokemonRepository();
+      await expect(repository.getPokemon()).rejects.toThrow();
     });
   });
   

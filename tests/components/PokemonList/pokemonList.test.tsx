@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { PokemonList } from '../../../src/components/pokemonList/pokemonList';
-import { PokemonData } from '../../../src/models/pokemon';
+import { PokemonList } from '../../../src/application/components/pokemonList/pokemonList';
+import { PokemonData } from '../../../src/domain/pokemon';
 import '@testing-library/jest-dom';
 import React from 'react'
 

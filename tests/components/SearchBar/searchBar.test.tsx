@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { SearchBar } from '../../../src/components/searchBar/searchBar';
+import { SearchBar } from '../../../src/application/components/searchBar/searchBar';
 import { vi } from 'vitest';
 
 describe('SearchBar Component', () => {
