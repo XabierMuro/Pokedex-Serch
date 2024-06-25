@@ -1,8 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { AxiosPokemonRepository } from '../../src/infrastructure/axiosPokemonRepository';
-
+import { getPokemon } from '../../src/application/getPokemonService';
 
 const mock = new MockAdapter(axios);
 
@@ -63,8 +62,7 @@ describe('getPokemons', () => {
         ]
       });
   
-      const repository = new AxiosPokemonRepository();
-      const pokemons = await repository.getPokemon();
+      const pokemons = await getPokemon();
     
       expect(pokemons).toEqual([
         {
@@ -112,8 +110,7 @@ describe('getPokemons', () => {
   
       mock.onGet('https://pokeapi.co/api/v2/pokemon/1/').reply(500);
   
-      const repository = new AxiosPokemonRepository();
-      await expect(repository.getPokemon()).rejects.toThrow();
+      await expect(getPokemon()).rejects.toThrow();
     });
   });
   
