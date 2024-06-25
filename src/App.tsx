@@ -8,8 +8,7 @@ import { PokemonList } from './application/components/pokemonList/pokemonList'
 import { PokemonData } from './domain/pokemon'
 
 function App() {
-  
-  const [pokemons, setPokemons] = useState<PokemonData[]|undefined>(undefined)
+  const [pokemons, setPokemons] = useState<PokemonData[] | undefined>(undefined)
   const [search, setSearch] = useState<string>('')
   const [errorApi, setErrorApi] = useState<boolean>(false)
 
@@ -20,7 +19,7 @@ function App() {
   const onLoad = async () => {
     try {
       const result = await getPokemon()
-        setPokemons(result)
+      setPokemons(result)
     } catch (error) {
       setErrorApi(true)
     }
