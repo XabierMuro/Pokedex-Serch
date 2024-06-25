@@ -2,7 +2,7 @@ import axios from 'axios'
 import { PokemonDTO } from '../domain/pokemonDTO'
 import { PokemonData, Pokemon, Stats } from '../domain/pokemon'
 import { PokemonRepository } from '../domain/pokemonRepository'
-import { setLocalStorage, STORAGE_KEY } from './localStoragePokemonRepository'
+import { setLocalStorage } from './localStoragePokemonRepository'
 
 type Region = {
   name: string
@@ -22,11 +22,10 @@ const regions: Region[] = [
 ]
 
 export class AxiosPokemonRepository implements PokemonRepository {
-  async getPokemon(generation: string): Promise<PokemonData[]> {
+  async getPokemon(generation: string, key: string): Promise<PokemonData[]> {
     const region = regions.find(
       region => region.name.toUpperCase() === generation.toUpperCase(),
     )
-    console.log(region)
     const url = `https://pokeapi.co/api/v2/pokemon?limit=${region?.limit}&offset=${region?.offset}`
     const req = await axios.get(url)
     const pokemones = req.data.results
@@ -58,7 +57,7 @@ export class AxiosPokemonRepository implements PokemonRepository {
     const results = await Promise.all(promises)
     const validResults = results.filter(result => result !== null)
 
-    setLocalStorage(STORAGE_KEY, validResults)
+    setLocalStorage(key, validResults)
 
     return validResults
   }

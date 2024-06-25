@@ -19,6 +19,7 @@ function App() {
   }, [generation])
 
   const onLoad = async () => {
+    setPokemons(undefined)
     try {
       const result = await getPokemon(generation)
       setPokemons(result)
