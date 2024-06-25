@@ -1,5 +1,6 @@
 import './index.css'
 import { Header } from './application/components/header/header'
+import { DropdownGenerations } from './application/components/dropdownGenerations/dropdownGenerations'
 import { SearchBar } from './application/components/searchBar/searchBar'
 import { Footer } from './application/components/footer/footer'
 import { getPokemon } from './application/getPokemonService'
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <DropdownGenerations></DropdownGenerations>
       <SearchBar onChange={handleChange} />
       <PokemonList error={errorApi} pokemons={pokemons} search={search} />
       <Footer />
