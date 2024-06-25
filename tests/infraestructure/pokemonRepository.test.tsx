@@ -7,10 +7,12 @@ const mock = new MockAdapter(axios);
 
 beforeEach(() => {
   mock.reset();
+  localStorage.clear();
 });
 
 afterEach(() => {
   mock.resetHandlers();
+  localStorage.clear();
 });
 
 describe('getPokemons', () => {

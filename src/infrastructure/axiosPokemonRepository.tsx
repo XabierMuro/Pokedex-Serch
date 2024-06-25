@@ -2,6 +2,7 @@ import axios from 'axios'
 import { PokemonDTO } from '../domain/pokemonDTO'
 import { PokemonData, Pokemon, Stats } from '../domain/pokemon'
 import { PokemonRepository } from '../domain/pokemonRepository'
+import { setLocalStorage, STORAGE_KEY } from './localStoragePokemonRepository';
 
 export class AxiosPokemonRepository implements PokemonRepository {
 
@@ -36,6 +37,9 @@ export class AxiosPokemonRepository implements PokemonRepository {
   
       const results = await Promise.all(promises)
       const validResults = results.filter(result => result !== null)
+
+      setLocalStorage(STORAGE_KEY, validResults);
+
       return validResults
     }
 }
