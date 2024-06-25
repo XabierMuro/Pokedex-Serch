@@ -1,5 +1,5 @@
-import { PokemonData } from './pokemon';
+import { PokemonData } from './pokemon'
 
 export interface PokemonRepository {
-    getPokemon(): Promise<PokemonData[]>;
+  getPokemon(generation: string): Promise<PokemonData[]>
 }

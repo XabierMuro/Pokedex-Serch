@@ -1,9 +1,21 @@
 import styles from './dropdownGenerations.module.css'
 
-export function DropdownGenerations() {
+type DropdownGenerationsProps = {
+  onChange: (query: string) => void
+}
+export function DropdownGenerations({ onChange }: DropdownGenerationsProps) {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    if (onChange) {
+      onChange(event.target.value)
+    }
+  }
   return (
     <div className={styles.container}>
-      <select name="selectGenerations" className={styles.selectGenerations}>
+      <select
+        name="selectGenerations"
+        className={styles.selectGenerations}
+        onChange={handleChange}
+      >
         <option value="Kanto">Kanto</option>
         <option value="Johto">Johto</option>
         <option value="Hoenn">Hoenn</option>
@@ -12,7 +24,6 @@ export function DropdownGenerations() {
         <option value="Kalos">Kalos</option>
         <option value="Alola">Alola</option>
         <option value="Galar">Galar</option>
-        <option value="Hisui">Hisui</option>
         <option value="Paldea">Paldea</option>
       </select>
     </div>

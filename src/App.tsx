@@ -11,15 +11,16 @@ import { PokemonData } from './domain/pokemon'
 function App() {
   const [pokemons, setPokemons] = useState<PokemonData[] | undefined>(undefined)
   const [search, setSearch] = useState<string>('')
+  const [generation, setGenerations] = useState<string>('Kanto')
   const [errorApi, setErrorApi] = useState<boolean>(false)
 
   useEffect(() => {
     onLoad()
-  }, [])
+  }, [generation])
 
   const onLoad = async () => {
     try {
-      const result = await getPokemon()
+      const result = await getPokemon(generation)
       setPokemons(result)
     } catch (error) {
       setErrorApi(true)
@@ -30,10 +31,14 @@ function App() {
     setSearch(query)
   }
 
+  const handleChangeGeneration = (generation: string) => {
+    setGenerations(generation)
+  }
+
   return (
     <div className="container">
       <Header />
-      <DropdownGenerations></DropdownGenerations>
+      <DropdownGenerations onChange={handleChangeGeneration} />
       <SearchBar onChange={handleChange} />
       <PokemonList error={errorApi} pokemons={pokemons} search={search} />
       <Footer />
